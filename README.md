@@ -1,5 +1,9 @@
 Mother Jones mass shootings map
 ===========
+
+This is a Google Spreadsheets-driven map made possible by the work of [csessig86 found here](https://github.com/csessig86/tabletop_to_leaflet). I'm using it to create a readily-updateable map to accompany the magazine's [online guide to mass shootings in America.](https://www.motherjones.com/politics/2012/07/mass-shootings-map/) 
+
+
 * [Live demo](http://csessig86.github.io/tabletop_to_leaflet)
 
 * [Demo with clusters](http://csessig86.github.io/tabletop_to_leaflet#cluster)
