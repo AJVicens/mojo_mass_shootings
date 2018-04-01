@@ -1,4 +1,4 @@
-Tabletop to Leaflet
+Tabletop to Leaflet BLAH BLAH
 ===========
 * [Live demo](http://csessig86.github.io/tabletop_to_leaflet)
 
