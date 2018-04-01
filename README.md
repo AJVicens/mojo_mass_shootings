@@ -1,4 +1,4 @@
-Mother Jones mass shootings map FUCK
+Mother Jones mass shootings map
 ===========
 * [Live demo](http://csessig86.github.io/tabletop_to_leaflet)
 
