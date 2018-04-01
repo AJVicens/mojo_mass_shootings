@@ -1,4 +1,4 @@
-Tabletop to Leaflet BLAH BLAH
+Mother Jones mass shootings map
 ===========
 * [Live demo](http://csessig86.github.io/tabletop_to_leaflet)
 
