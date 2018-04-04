@@ -14,15 +14,6 @@ var spreadsheet_key = '1BLs1cBe7RE62p2TFnLRwcHZ06viDJaRQhAcKrIKG6qI';
 var lat_column = 'latitude';
 var long_column = 'longitude';
 
-// Marker options
-var radius = 8;
-// Regular fill
-var fill_color = "#023858";
-var border_color = "#FFF";
-// Hover
-var fill_color_hover = "#FFF";
-var border_color_hover = "#333"
-
 var global_markers_data;
 
 // Function that creates our popup
@@ -60,10 +51,19 @@ function loadMarkersToMap(markers_data) {
 	}
 
 	for (var num = 0; num < markers_data.length; num++) {
+		(function (num){
 		// Capture current iteration through JSON file
 		current = markers_data[num];
 		var total_victims = parseInt(current.total_victims);
-		
+
+		// Marker options
+		var radius = 8;
+		// Regular fill
+		var fill_color = "#023858";
+		var border_color = "#FFF";
+		// Hover
+		var fill_color_hover = "#FFF";
+		var border_color_hover = "#333"
 
 		// Add lat, long to marker
 		var marker_location = new L.LatLng(current[lat_column], current[long_column]);
@@ -85,7 +85,7 @@ function loadMarkersToMap(markers_data) {
 		layer_marker.bindPopup( generatePopup(current) );
 
 		// Add events to marker
-		(function (num){
+		
 			// Must call separate popup(e) function to make sure right data is shown
 			function mouseOver(e) {
 				var layer_marker = e.target;
@@ -120,10 +120,11 @@ function loadMarkersToMap(markers_data) {
 		    	mouseout: mouseOut
 		    });
 
-		})(num)
-
-		// Add to feature group
-		markers.addLayer(layer_marker);
+		
+		    	// Add to feature group
+				markers.addLayer(layer_marker);
+				})(num)    
+				
 	}
 
 	// Add feature group to map
