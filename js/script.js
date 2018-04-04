@@ -3,7 +3,7 @@ if (window.location.hash === "#cluster") {
 	// Set up cluster group
 	var markers = new L.MarkerClusterGroup();
 } else {
-	// Otherwise set up normal groupx`
+	// Otherwise set up normal grouptotal_victims`
 	var markers = new L.LayerGroup();
 }
 
@@ -64,6 +64,20 @@ function loadMarkersToMap(markers_data) {
 		// Hover
 		var fill_color_hover = "#FFF";
 		var border_color_hover = "#333"
+
+		 if (total_victims >= 0 && total_victims < 10) {
+		 fill_color = '#fef0d9';
+		 } else if (total_victims >= 10 && total_victims < 20) {
+		 fill_color = '#fdd49e';
+		 } else if (total_victims >= 20 && total_victims < 30) {
+		 fill_color = '#fdbb84';
+		 } else if (total_victims >= 30 && total_victims < 50) {
+		 fill_color = '#fc8d59';
+		 } else if (total_victims >= 50 && total_victims < 100) {
+		 fill_color = '#e34a33';
+		 } else if (total_victims >= 100 && total_victims < 1000) {
+		 fill_color = '#b30000';
+		}
 
 		// Add lat, long to marker
 		var marker_location = new L.LatLng(current[lat_column], current[long_column]);
@@ -130,8 +144,8 @@ function loadMarkersToMap(markers_data) {
 	// Add feature group to map
 	map.addLayer(markers);
 
-	// Clear load text
-	// $('.sidebar_text_intro').html('');
+	// Clear load tetotal_victimst
+	// $('.sidebar_tetotal_victimst_intro').html('');
 };
 
 // Pull data from Google spreadsheet via Tabletop
