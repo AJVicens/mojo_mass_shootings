@@ -62,6 +62,8 @@ function loadMarkersToMap(markers_data) {
 	for (var num = 0; num < markers_data.length; num++) {
 		// Capture current iteration through JSON file
 		current = markers_data[num];
+		var total_victims = parseInt(current.total_victims);
+		
 
 		// Add lat, long to marker
 		var marker_location = new L.LatLng(current[lat_column], current[long_column]);
