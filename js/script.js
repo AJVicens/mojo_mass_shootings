@@ -3,7 +3,7 @@ if (window.location.hash === "#cluster") {
 	// Set up cluster group
 	var markers = new L.MarkerClusterGroup();
 } else {
-	// Otherwise set up normal grouptotal_victims`
+	// Otherwise set up normal group total_victims`
 	var markers = new L.LayerGroup();
 }
 
