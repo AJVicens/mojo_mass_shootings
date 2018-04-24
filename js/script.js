@@ -8,7 +8,7 @@ if (window.location.hash === "#cluster") {
 }
 
 // Google Docs spreadsheet key
-var spreadsheet_key = '1b9o6uDO18sLxBqPwl_Gh9bnhW-ev_dABH83M5Vb5L8o';
+var spreadsheet_key = '1b9o6uDO18sLxBqPwl_Gh9bnhW-ev_dABH83M5Vb5L8o	';
 
 // Name of lat, long columns in Google spreadsheet
 var lat_column = 'latitude';
@@ -27,8 +27,6 @@ function generatePopup(content){
 	popup_content += '<td>' + content['location'] + '</td>';
 	popup_content += '<tr><td><strong>Date:</strong></td>';
 	popup_content += '<td>' + content['date'] + '</td>';
-	popup_content += '<tr><td><strong>Year:</strong></td>';
-	popup_content += '<td>' + content['year'] + '</td>';
 	popup_content += '<tr><td><strong>Summary:</strong></td>';
 	popup_content += '<td>' + content['summary'] + '</td>';
 	popup_content += '<tr><td><strong>Total victims:</strong></td>';
