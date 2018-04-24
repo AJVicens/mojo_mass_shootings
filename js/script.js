@@ -63,18 +63,12 @@ function loadMarkersToMap(markers_data) {
 		var fill_color_hover = "#FFF";
 		var border_color_hover = "#333"
 
-		 if (total_victims >= 0 && total_victims < 10) {
+		 if (total_victims >= 0 && total_victims < 30) {
 		 fill_color = '#fef0d9';
-		 } else if (total_victims >= 10 && total_victims < 20) {
+		 } else if (total_victims >= 31 && total_victims < 100) {
 		 fill_color = '#fdd49e';
-		 } else if (total_victims >= 20 && total_victims < 30) {
+		 } else if (total_victims >= 101 && total_victims < 1001) {
 		 fill_color = '#fdbb84';
-		 } else if (total_victims >= 30 && total_victims < 50) {
-		 fill_color = '#fc8d59';
-		 } else if (total_victims >= 50 && total_victims < 100) {
-		 fill_color = '#e34a33';
-		 } else if (total_victims >= 100 && total_victims < 1000) {
-		 fill_color = '#b30000';
 		}
 
 		// Add lat, long to marker
