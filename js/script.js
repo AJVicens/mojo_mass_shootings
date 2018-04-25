@@ -65,16 +65,16 @@ function loadMarkersToMap(markers_data) {
 
 		 if (total_victims >= 0 && total_victims < 30) {
 		 fill_color = '#fc8d59';
-		 } else if (total_victims >= 31 && total_victims < 100) {
+		 } else if (total_victims >= 30 && total_victims < 100) {
 		 fill_color = '#fe34a33';
-		 } else if (total_victims >= 101 && total_victims < 1001) {
+		 } else if (total_victims >= 100 && total_victims < 1000) {
 		 fill_color = '#b30000';
 		}
 
 		// Add lat, long to marker
 		var marker_location = new L.LatLng(current[lat_column], current[long_column]);
 
-		// Determine radius of the circle by the value in total
+		// Determine radius of the circle by the value in total_victims
 		radius_actual = Math.sqrt(current['total_victims'] / 3.14) * 2.8;
 
 		// Options for our circle marker
@@ -96,7 +96,7 @@ function loadMarkersToMap(markers_data) {
 			function mouseOver(e) {
 				var layer_marker = e.target;
 		        layer_marker.setStyle({
-		            radius: radius + 1,
+		            radius: radius_actual + 1,
 		            fillColor: fill_color_hover,
 		            color: border_color_hover,
 		            weight: 2,
@@ -110,7 +110,7 @@ function loadMarkersToMap(markers_data) {
 		    function mouseOut(e) {
 				var layer_marker = e.target;
 				layer_marker.setStyle({
-					radius: radius + 1,
+					radius: radius_actual + 1,
 					fillColor: fill_color,
 					color: border_color,
 					weight: 1,
