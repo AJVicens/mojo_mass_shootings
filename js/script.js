@@ -64,11 +64,11 @@ function loadMarkersToMap(markers_data) {
 		var border_color_hover = "#333"
 
 		 if (total_victims >= 0 && total_victims < 30) {
-		 fill_color = '#fef0d9';
+		 fill_color = '#fc8d59';
 		 } else if (total_victims >= 31 && total_victims < 100) {
-		 fill_color = '#fdd49e';
+		 fill_color = '#fe34a33';
 		 } else if (total_victims >= 101 && total_victims < 1001) {
-		 fill_color = '#fdbb84';
+		 fill_color = '#b30000';
 		}
 
 		// Add lat, long to marker
