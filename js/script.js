@@ -57,19 +57,19 @@ function loadMarkersToMap(markers_data) {
 		// Marker options
 		var radius = 8;
 		// Regular fill
-		var fill_color = "#023858";
+		var fill_color = "ef3b2c";
 		var border_color = "#FFF";
 		// Hover
 		var fill_color_hover = "#FFF";
 		var border_color_hover = "#333"
 
 		 if (total_victims >= 0 && total_victims < 30) {
-		 fill_color = '#fc8d59';
+		 fill_color = '#cb181d';
 		 } else if (total_victims >= 30 && total_victims < 100) {
-		 fill_color = '#fe34a33';
+		 fill_color = '#cb181d';
 		 } else if (total_victims >= 100 && total_victims < 1000) {
-		 fill_color = '#b30000';
-		}
+		 fill_color = '#cb181d';
+		 }
 
 		// Add lat, long to marker
 		var marker_location = new L.LatLng(current[lat_column], current[long_column]);
@@ -84,7 +84,7 @@ function loadMarkersToMap(markers_data) {
 			color: border_color,
 			weight: 1,
 			opacity: 1,
-			fillOpacity: 0.8
+			fillOpacity: 1
 		});
 
 		// Generate popup
@@ -96,8 +96,8 @@ function loadMarkersToMap(markers_data) {
 			function mouseOver(e) {
 				var layer_marker = e.target;
 		        layer_marker.setStyle({
-		            radius: radius_actual + 1,
-		            fillColor: fill_color_hover,
+		            //radius: radius_actual + 1,
+		            fillColor: fill_color,
 		            color: border_color_hover,
 		            weight: 2,
 		            opacity: 1,
@@ -110,12 +110,12 @@ function loadMarkersToMap(markers_data) {
 		    function mouseOut(e) {
 				var layer_marker = e.target;
 				layer_marker.setStyle({
-					radius: radius_actual + 1,
+					//radius: radius_actual + 1,
 					fillColor: fill_color,
 					color: border_color,
 					weight: 1,
 					opacity: 1,
-					fillOpacity: 0.8
+					fillOpacity: 1
 		        });
 		        // layer_marker.closePopup();
 		    }
