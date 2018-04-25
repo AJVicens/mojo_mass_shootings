@@ -75,11 +75,11 @@ function loadMarkersToMap(markers_data) {
 		var marker_location = new L.LatLng(current[lat_column], current[long_column]);
 
 		// Determine radius of the circle by the value in total
-		// radius_actual = Math.sqrt(current['total'] / 3.14) * 2.8;
+		radius_actual = Math.sqrt(current['total_victims'] / 3.14) * 2.8;
 
 		// Options for our circle marker
 		var layer_marker = L.circleMarker(marker_location, {
-			radius: radius,
+			radius: radius_actual,
 			fillColor: fill_color,
 			color: border_color,
 			weight: 1,
