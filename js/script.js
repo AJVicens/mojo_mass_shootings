@@ -61,26 +61,39 @@ function loadMarkersToMap(markers_data) {
 		var border_color = "#FFF";
 		// Hover
 		var fill_color_hover = "#FFF";
-		var border_color_hover = "#333"
+		var border_color_hover = "#333";
 
-		 if (total_victims >= 0 && total_victims < 30) {
-		 fill_color = '#fc4e2a';
-		 } else if (total_victims >= 30 && total_victims < 100) {
-		 fill_color = '#fc4e2a';
-		 } else if (total_victims >= 100 && total_victims < 1000) {
-		 fill_color = '#fc4e2a';
-		 }
+        //if (total_victims >= 0 && total_victims < 30) {
+        //  fill_color = '#fc4e2a';
+        //} else if (total_victims >= 30 && total_victims < 100) {
+        //  fill_color = '#fc4e2a';
+        //} else if (total_victims >= 100 && total_victims < 1000) {
+        //  fill_color = '#fc4e2a';
+        //}
 
 		// Add lat, long to marker
 		var marker_location = new L.LatLng(current[lat_column], current[long_column]);
 
 		// Determine radius of the circle by the value in total_victims
-		radius_actual = Math.sqrt(current['total_victims'] / 3.14) * 2.8;
+		//radius_actual = Math.sqrt(parseInt(current['total_victims']) / 3.14) * 2.8;
+		var victim_int = parseInt(current['total_victims']);
+		
+		
+		if(victim_int < 20){
+            radius_show = 10;
+        }else if(victim_int < 50){
+            radius_show = 15;
+        }else if(victim_int < 100){
+            radius_show = 20;
+        }else{
+            radius_show = 25;
+        }
+        
 
 		// Options for our circle marker
 		var layer_marker = L.circleMarker(marker_location, {
-			radius: radius_actual,
-			fillColor: fill_color,
+			radius: radius_show,
+			fillColor: '#fc4e2a',
 			color: border_color,
 			weight: 1,
 			opacity: 1,
@@ -92,33 +105,25 @@ function loadMarkersToMap(markers_data) {
 
 		// Add events to marker
 		
-			// Must call separate popup(e) function to make sure right data is shown
-			function mouseOver(e) {
-				var layer_marker = e.target;
-		        layer_marker.setStyle({
-		            //radius: radius_actual + 1,
-		            fillColor: fill_color,
-		            color: border_color_hover,
-		            weight: 2,
-		            opacity: 1,
-		            fillOpacity: 1
-				});
-				// layer_marker.openPopup();
-		    }
+		// Must call separate popup(e) function to make sure right data is shown
+		function mouseOver(e) {
+			var layer_marker = e.target;
+	        layer_marker.setStyle({
+	            color: border_color_hover,
+	            fillOpacity:.8
+			});
+			// layer_marker.openPopup();
+	    }
 
-		    // What happens when mouse leaves the marker
-		    function mouseOut(e) {
-				var layer_marker = e.target;
-				layer_marker.setStyle({
-					//radius: radius_actual + 1,
-					fillColor: fill_color,
-					color: border_color,
-					weight: 1,
-					opacity: 1,
-					fillOpacity: 1
-		        });
-		        // layer_marker.closePopup();
-		    }
+	    // What happens when mouse leaves the marker
+	    function mouseOut(e) {
+			var layer_marker = e.target;
+			layer_marker.setStyle({
+				color: border_color,
+				fillOpacity: 1
+	        });
+	        // layer_marker.closePopup();
+	    }
 
 		    // Call mouseover, mouseout functions
 		    layer_marker.on({
