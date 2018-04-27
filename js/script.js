@@ -80,17 +80,17 @@ function loadMarkersToMap(markers_data) {
 		
 		
 		if(victim_int < 20){
-            radius_show = 10;
+            radius_show = 5;
         }else if(victim_int < 30){
-            radius_show = 13;
+            radius_show = 8;
         }else if(victim_int < 50){
-            radius_show = 18;
+            radius_show = 12;
         }else if(victim_int < 80){
-            radius_show = 22;
+            radius_show = 15;
         }else if(victim_int < 105){
-            radius_show = 25;
+            radius_show = 17;
         }else if(victim_int < 150){
-            radius_show = 27;
+            radius_show = 19;
         }else{
             radius_show = 30;
         }

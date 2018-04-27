@@ -7,6 +7,6 @@ var layer = new L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png
 if ($(window).width() < 626) {
     var map = new L.Map('map').setView([42,-93],6);
 } else {
-    var map = new L.Map('map').setView([42,-96.5],4);
+    var map = new L.Map('map').setView([42,-96.5],5);
 }
 map.addLayer(layer);
